@@ -11,22 +11,28 @@ const int two = 2;
 
     int row;
     int col;
+    char c1;
+    char c2;
     cout<<"Please enter a col number: ";
     cin>>col;
-    if (col%two == 0)
+    while(col%two == 0 || col < 1)
     {
-        throw("Can't take even numbers");
+        cout<<"Please enter a another col number: ";
+        cin>>col;
     }
     
-    // cout<<endl;
     cout<<"Please enter a row number: ";
     cin>>row;
-    if (col%two == 0)
+    while(row%two == 0 || row < 1)
     {
-        throw("Can't take even numbers");
+        cout<<"Please enter a another Row number: ";
+        cin>>row;
     }
-    // cout<<endl;
-    string s = ariel::mat(col,row,'@', '-');
-    cout<<"The Rug is: "<<s<<endl;
+    cout<<"Please enter a symbol1 number: ";
+    cin>>c1;
+    cout<<"Please enter a symbol2 number: ";
+    cin>>c2;
+    string s = ariel::mat(col,row,c1, c2);
+    cout<<"The Rug is: \n"<<s<<endl;
     return 0;
 }
